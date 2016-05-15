@@ -32,6 +32,13 @@ void main()
         first * exp( -( 1 / (2*Sigma) )),  first   , first * exp( -( 1 / (2*Sigma) )),
         first * exp( -( 1 / Sigma )), first * exp( -( 1 / (2*Sigma) )), first * exp( -( 1 / Sigma )) 
 	);
+	float sum=0;
+	for(int i=0; i<9;++i){
+		sum += kernel[i];
+	}
+	for(int i=0; i<9; i++){
+		kernel[i] = kernel[i]/sum;
+	}
 	float distance = sqrt(pow(TexCoords.s-circleCenter.x,2)+pow(TexCoords.t-circleCenter.y,2));
     if(distance < radius){
 //------------------------------------magnify------------------------------------------//		

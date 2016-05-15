@@ -62,14 +62,10 @@ static void key_callback(GLFWwindow* window, int key, int scancode, int action, 
 			radius = 0;
 	}
 	if (key == GLFW_KEY_H && action == GLFW_RELEASE) {	//按H增加Gaussian Blur的sigma
-		sigma += 0.05;
-		if (sigma > 0.9)
-			sigma = 0.9;
+		sigma += 0.1;
 	}
 	if (key == GLFW_KEY_G && action == GLFW_RELEASE) {	//按G減少Gaussian Blur的sigma
-		sigma -= 0.05;
-		if (sigma < 0.6)
-			sigma = 0.6;
+		sigma -= 0.1;
 	}
 }
 
